@@ -161,6 +161,7 @@ function select(sid){
 }
 
 function get_results(start){
+	$("#q").googleSuggest({service: "web"});
 	ls = 1;
 	tab = 'web';
 	page = start;

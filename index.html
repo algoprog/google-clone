@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Google Clone 2.0</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="css/app.css" type="text/css"/>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
+<script src="js/suggest.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<div class="top">
+<a href="javascript:void(0);" onclick="reset();"><img class="logo_sm" src="images/logo_sm.png"/></a>
+<input name="q" class="qt" id="q" value=""/>
+<input id="sug"/>
+<div id="delete"><span id="x">x</span></div>
+<a href="javascript:void(0);" class="sbtn button"></a>
+</div>
+
+<div class="tabs"><span id="tw" onclick="no_fade = 0; get_results(0);">Web</span> <span id="ti" onclick="no_fade = 0; get_images(0);">Images</span></div>
+
+<div class="info" id="info">About <span id="count"></span> results for <span id="query"></span> (<span id="speed"></span> seconds)</div>
+
+<div class="res" id="res">
+</div>
+<div class="res_img" id="res_img">
+</div>
+<br/><br/><br/><br/>
+
+<div class="main">
+	<img class="logo" src="images/logo11w.png"/>
+	<br/><br/>
+	<input name="qs" class="q" id="qs"/>
+	<br/><br/>
+	<a href="#" class="button"><span>Google Search</span></a>
+	&nbsp;&nbsp;
+	<a href="#" class="button" onclick="lucky();"><span>I'm Feeling Lucky</span></a>
+</div>
+
+<div class="footer">Google Clone 2.0 - by greekdev</div>
+
+</body>
+</html>

@@ -4,6 +4,14 @@ body{
 	font-family: Arial;
 }
 
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
 .main{
 	position: fixed;
 	margin-left: -400px;

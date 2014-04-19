@@ -14,3 +14,7 @@ Features in 2.0:
   => Web search
 
   => Images search
+  
+  => Feeling Lucky function
+  
+  => Load more on scroll

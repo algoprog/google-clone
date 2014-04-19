@@ -284,6 +284,8 @@ function clear(){
 	page = 0;
 	$("#res").hide();
 	$("#res").html("");
+	$("#res_img").hide();
+	$("#res_img").html("");
 	$("#info").hide();
 	$(".tabs").hide();
 	$("#q").val("");
@@ -304,6 +306,8 @@ function reset(){
 	$(".top").hide();
 	$("#res").html("");
 	$("#res").hide();
+	$("#res_img").hide();
+	$("#res_img").html("");
 	$("#info").hide();
 	$(".tabs").hide();
 	$(".main").show();

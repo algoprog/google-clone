@@ -9,5 +9,7 @@ Google Clone is written in pure javascript and html5.
 Features in 2.0:
 
   -> Google Instant
+
   -> Web search
+
   -> Images search

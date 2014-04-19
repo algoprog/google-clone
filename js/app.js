@@ -298,6 +298,7 @@ function clear(){
 }
 
 function reset(){
+	tab = 'web';
 	page = 0;
 	no_search = 1;
 	set_query("");

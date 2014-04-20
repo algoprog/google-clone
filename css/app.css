@@ -223,6 +223,7 @@ a.rl:hover{
     background: #F4F4F4;
 	border-color: #C0C0C0;
 	color: #333;
+	text-decoration: none;
 }
 
 .button:active{

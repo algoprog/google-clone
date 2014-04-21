@@ -47,11 +47,11 @@ a:hover{
 	border: 1px solid #D8D8D8;
 	font-size: 17px;
 	font-family: Arial;
-	z-index: 1000;
+	z-index: 10000;
 }
 
 #sug{
-	z-index: 1;
+	z-index: 1000;
     color: #C0C0C0;
 	background-color: white;
 }
@@ -76,7 +76,7 @@ a:hover{
     border: 1px solid #81BEF7;
     border-top: 1px solid #81BEF7;
     border-left: none;
-	z-index: 1000;
+	z-index: 10000;
 }
 
 #delete #x {
@@ -119,6 +119,7 @@ a:hover{
 	height: 60px;
 	top: 0px;
 	background-color: #F2F2F2;
+	z-index: 1000;
 }
 
 .res{
@@ -157,6 +158,39 @@ a:hover{
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
 	-moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
 	box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
+}
+
+.res_yt{
+	display: none;
+	margin-top: 20px;
+	margin-left: 130px;
+	font-family: Arial;
+	font-size: 13px;
+	overflow: hidden;
+}
+
+.video{
+	margin-bottom: 80px;
+	position: relative;
+}
+
+.video img{
+	float: left;
+	margin-right: 10px;
+}
+
+.duration{
+	position: absolute;
+    bottom: -50px;
+    left: 0px;  
+    width: 38px;
+	text-align: center;
+	background-color: black;  
+	font-family: 'tahoma';  
+	font-size: 12px;  
+	color: white;  
+	opacity: 0.6; 
+	filter: alpha(opacity=60);
 }
 
 .g{
@@ -262,7 +296,7 @@ a.rl:hover{
 	height: 22px;
 	width: 30px;
 	background: url(../images/ico-search.png) no-repeat #4d90fe center;
-	z-index: 1000;
+	z-index: 10000;
 }
 
 .sbtn:hover{
@@ -288,6 +322,7 @@ a.rl:hover{
 	-webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.55);
 	-moz-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.55);
 	box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.55);
+	z-index: 10000;
 }
 .q,.ui-widget{
     font-family: Arial;

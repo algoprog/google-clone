@@ -9,6 +9,14 @@ Google Clone is written in pure javascript and html5.
 
 Demo: http://googleclone.sourceforge.net
 
+
+
+What's new in 2.1:
+
+  > Videos search
+
+
+
 Features in 2.0:
 
   > Google Instant

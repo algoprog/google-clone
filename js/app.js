@@ -1,11 +1,11 @@
 /*
-Google Clone 2.0
+Google Clone 2.1
 Developed by GreekDev
 
 https://github.com/greekdev/google-clone
 */
 
-app_name = "Google Clone 2.0";
+app_name = "Google Clone 2.1";
 var squery;
 
 $(document).ready(function(){

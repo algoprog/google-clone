@@ -252,7 +252,7 @@ function get_images(start){
 					$("#info").show();
 					$(".tabs").show();
 				}
-				if(cnt<5){
+				if(cnt<10){
 					cnt++;
 					no_get = 0;
 					get_images(start+1);

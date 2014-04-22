@@ -162,6 +162,7 @@ a:hover{
 
 .res_yt{
 	display: none;
+	width: 560px;
 	margin-top: 20px;
 	margin-left: 130px;
 	font-family: Arial;

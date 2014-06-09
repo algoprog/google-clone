@@ -17,7 +17,7 @@ Change the loc variable in app.js with your own language.
 No need for a php server or anything else.
 
 
-TO DO
+To do
 =====
 
 freebase API implementation, better images search UI, News search

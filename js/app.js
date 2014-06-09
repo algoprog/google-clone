@@ -1,11 +1,12 @@
 /*
-Google Clone 2.1
+Google Clone 2.2
 Developed by GreekDev
 
 https://github.com/greekdev/google-clone
 */
 
-app_name = "Google Clone 2.1";
+app_name = "Google Clone 2.2";
+loc = "el";
 var squery;
 
 $(document).ready(function(){
@@ -18,6 +19,7 @@ $(document).ready(function(){
 	window.squery = "";
 	query = "";
 	search = setTimeout('',1);
+	wiki = 0;
 	
 	$("#q").googleSuggest({service: "web"});
 	$("#q").on("autocompleteselect",function(){setTimeout("$('#q').blur(); no_fade = 0; fsearch();",10);});
@@ -43,6 +45,9 @@ $(document).ready(function(){
 	});
 	
 	$("#q").bind('keyup keypress cut copy paste', function(e){
+		if(e.keyCode==13){
+			go_search();
+		}
 		if(window.squery.indexOf($("#q").val())>-1){
 			$("#sug").val(query);
 		}else{
@@ -57,9 +62,6 @@ $(document).ready(function(){
 			$("#x").fadeIn();
 			clearTimeout(search);
 			search = setTimeout("no_search = 0; gsearch();",500);
-		}
-		if(e.keyCode==13){
-			go_search();
 		}
 	});
 	
@@ -84,6 +86,7 @@ $(document).ready(function(){
 });
 
 function go_search(){
+	$("html, body").animate({ scrollTop: 0 }, 500);
 	$("#sug").val("");
 	clearTimeout(search);
 	$("#q").blur();
@@ -129,6 +132,10 @@ function set_query(q){
 }
 
 function gsearch(){
+if($("html, body").scrollTop()>0){
+	$("html, body").animate({ scrollTop: 0 }, 500);
+	$(".ui-autocomplete").hide();
+}
 if(no_search==0){
 	if(tab=='web'){
 		get_results(0);
@@ -178,7 +185,7 @@ function get_results(start){
 		$("#res_yt").css({"opacity":"0.4"});
 	}
 	if(no_get==0){
-	gurl = "https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&num=10&prettyPrint=false&source=gcsc&gss=.com&sig=ee93f9aae9c9e9dba5eea831d506e69a&cx=partner-pub-8993703457585266%3A4862972284&googlehost=www.google.com&q="+query;
+	gurl = "https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&num=10&prettyPrint=false&source=gcsc&gss=.com&sig=ee93f9aae9c9e9dba5eea831d506e69a&cx=partner-pub-8993703457585266%3A4862972284&googlehost=www.google.com&hl="+loc+"&q="+query;
 	
 	if(start>0){
 		gurl = gurl + "&start=" + start + 1;
@@ -192,9 +199,18 @@ function get_results(start){
 			if(response.results){
 				if(start==0){
 					$("#res").html("");
+					wiki = 0;
 				}
 				$.each(response.results, function(index, item){
-					$("#res").append("<a href='"+item.url+"' target='blank' class='rl'>"+item.title+"</a><br/><span class='g'>"+item.visibleUrl+"</span><br/>"+item.content+"<br/><br/><br/>");
+					if(item.visibleUrl.indexOf(".wikipedia.org")>=0 && wiki==0){
+						wimg = "<img src='' id='wimg'>";
+						wtitle = item.title.match(/<b>(.*?)<\/b>/);
+					}else{
+						wimg = "";
+						wtitle = "";
+					}
+					$("#res").append("<div class='rbox clearfix' onclick='window.open("+'"'+decodeURIComponent(item.url)+'"'+","+'"_blank"'+");'>"+wimg+"<img class='icon' src='https://plus.google.com/_/favicon?domain="+item.visibleUrl+"'/>&nbsp; <span class='rl'>"+item.title+"</span><br/><span class='g'>"+item.visibleUrl+"</span><br/>"+item.content+"<br/></div><br/>");
+					if(wtitle!="" && wiki==0) get_thumb(wtitle[1]);
 				});
 				if(start==0 && response.cursor.resultCount!='0'){
 					$("#res_img").hide();
@@ -222,6 +238,22 @@ function get_results(start){
 	}
 }
 
+function get_thumb(title){
+wiki = 1;
+$.ajax({
+	type: "GET",
+	url: "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&hl="+loc+"&q="+title+"&start=0",
+	dataType:"jsonp",
+	success: function(response){
+		if(response.responseData.results){
+			$("#wimg").attr("src", response.responseData.results[0].unescapedUrl);
+		}else{
+			$("#wimg").hide();
+		}
+	}
+});
+}
+
 function get_images(start){
 	$("#q").googleSuggest({service: "images"});
 	ls = 1;
@@ -234,7 +266,7 @@ function get_images(start){
 		$("#res_yt").css({"opacity":"0.4"});
 	}
 	if(no_get==0){
-	gurl = "https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&num=10&prettyPrint=false&source=gcsc&gss=.com&sig=ee93f9aae9c9e9dba5eea831d506e69a&searchtype=image&cx=partner-pub-8993703457585266%3A4862972284&googlehost=www.google.com&q="+query;
+	gurl = "https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&num=10&prettyPrint=false&source=gcsc&gss=.com&sig=ee93f9aae9c9e9dba5eea831d506e69a&searchtype=image&cx=partner-pub-8993703457585266%3A4862972284&googlehost=www.google.com&hl="+loc+"&q="+query;
 	
 	if(start>0){
 		gurl = gurl + "&start=" + start + 1;
@@ -290,7 +322,7 @@ function get_videos(start){
 		$("#res_yt").css({"opacity":"0.4"});
 	}
 	if(no_get==0){
-	gurl = "http://gdata.youtube.com/feeds/api/videos?alt=jsonc&v=2&lr=en&orderby=viewCount&max-results=20&q="+query;
+	gurl = "http://gdata.youtube.com/feeds/api/videos?alt=jsonc&v=2&lr=en&orderby=viewCount&max-results=20&hl="+loc+"&q="+query;
 	gurl = gurl + "&start-index=" + 2*start + 1;
 	
 	no_get = 1;

@@ -1,3 +1,5 @@
+![](http://googleclone.sourceforge.net/gclone.png)
+
 Google Clone
 ============
 

@@ -10,6 +10,13 @@ Google Clone is written in pure javascript and html5.
 Demo: http://googleclone.sourceforge.net
 
 
+What's new in 2.2:
+
+  > Website favicons
+  
+  > Bugs fixes
+
+
 
 What's new in 2.1:
 

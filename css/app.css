@@ -4,11 +4,12 @@ body{
 	font-family: Arial;
 }
 
-a{
+a,.rl{
 	text-decoration: none;
+	color: #0431B4;
 }
 
-a:hover{
+a:hover,.rl:hover{
 	text-decoration: underline;
 }
 
@@ -125,7 +126,7 @@ a:hover{
 .res{
 	display: none;
 	margin-top: 20px;
-	margin-left: 130px;
+	margin-left: 121px;
 	width: 560px;
 	font-family: Arial;
 	font-size: 13px;
@@ -138,6 +139,44 @@ a:hover{
 	font-family: Arial;
 	font-size: 13px;
 	overflow: hidden;
+}
+
+.rbox{
+	padding: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.rbox:hover{
+	background-color: #E6E6E6;
+	cursor: pointer;
+}
+
+.icon{
+	width: 16px;
+	height: 16px;
+}
+
+#wimg{
+	float: left;
+	max-width: 120px;
+	max-height: 120px;
+	margin-right: 10px;
+	border: 1px solid #E6E6E6;
+}
+
+.clearfix:before,.clearfix:after{
+    content: " ";
+    display: table;
+}
+
+.clearfix:after{
+    clear: both;
+}
+
+.clearfix{
+    *zoom: 1;
 }
 
 .image{
@@ -223,13 +262,9 @@ a:hover{
 	color: #B45F04;
 }
 
-a.rl{
+.rl{
 	font-size: 17px;
 	text-decoration: none;
-}
-
-a.rl:hover{
-	text-decoration: underline;
 }
 
 .button{

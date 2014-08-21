@@ -10,7 +10,9 @@ NEW GOOGLE SEARCH SCRIPT: http://algoprog.com/google-search-script
 Features added in the new script:
 
   > No bugs, faster
+  
   > News, Blogs & Weather search
+  
   > Freebase knwoledge graph results
 
 

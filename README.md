@@ -25,21 +25,6 @@ It is recommended that you use this script for personal or educational use only.
 
 Google Clone is written in pure javascript and html5.
 
-Demo: http://googleclone.sourceforge.net
-
-
-Instructions
-============
-
-Change the loc variable in app.js with your own language.
-No need for a php server or anything else.
-
-
-To do
-=====
-
-freebase API implementation, better images search UI, News search
-
 
 What's new
 ==========

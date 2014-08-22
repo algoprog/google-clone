@@ -13,7 +13,7 @@ Features added in the new script:
   
   > News, Blogs & Weather search
   
-  > Freebase knwoledge graph results
+  > Freebase knowledge graph results
 
 
 Google Clone

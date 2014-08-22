@@ -3,7 +3,7 @@
 WARNING: NEW SCRIPT RELEASED!
 ============
 
-This project is abandoned and has many bugs. Please download the new script.
+This project is abandoned and deleted. Please download the new script.
 
 NEW GOOGLE SEARCH SCRIPT: http://algoprog.com/google-search-script
 

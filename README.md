@@ -1,5 +1,3 @@
-![](http://googleclone.sourceforge.net/gclone.png)
-
 WARNING: NEW SCRIPT RELEASED!
 ============
 
